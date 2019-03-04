@@ -3,6 +3,8 @@
 # Copyright © 2019 Jakub Wilk <jwilk@jwilk.net>
 # SPDX-License-Identifier: MIT
 
+set -e -u
+
 if [ $# -eq 0 ]
 then
     set -- "$SHELL"

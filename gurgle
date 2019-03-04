@@ -14,7 +14,7 @@ exec env -i PATH="$PATH" TERM="$TERM" HISTFILE=/dev/null \
     --ro-bind /bin /bin \
     --ro-bind /lib /lib \
     --ro-bind /usr /usr \
-    --bind "$PWD" /home \
+    --bind . /home \
     --setenv HOME /home \
     --proc /proc \
     --dev /dev \

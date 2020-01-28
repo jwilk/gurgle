@@ -27,6 +27,8 @@ exec env -i PATH="$PATH" TERM="$TERM" HISTFILE=/dev/null \
     --setenv HOME /home \
     --proc /proc \
     --dev /dev \
+    --uid 1000 \
+    --gid 1000 \
     --unshare-user-try \
     --unshare-ipc \
     --unshare-pid \

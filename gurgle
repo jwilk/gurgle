@@ -19,6 +19,10 @@ do
     fi
 done
 
+passwd=$(getent passwd nobody)
+IFS=: read _ _ uid gid _ <<EOF
+$passwd
+EOF
 PATH=$(getconf PATH)
 exec env -i PATH="$PATH" TERM="$TERM" HISTFILE=/dev/null \
     bwrap \
@@ -27,8 +31,8 @@ exec env -i PATH="$PATH" TERM="$TERM" HISTFILE=/dev/null \
     --setenv HOME /home \
     --proc /proc \
     --dev /dev \
-    --uid 1000 \
-    --gid 1000 \
+    --uid $uid \
+    --gid $gid \
     --unshare-user-try \
     --unshare-ipc \
     --unshare-pid \

@@ -11,7 +11,7 @@ then
 fi
 
 basefs=''
-for dir in /bin /lib /lib64 /usr
+for dir in /bin /lib /lib64 /usr /etc/alternatives
 do
     if [ -d "$dir" ]
     then
